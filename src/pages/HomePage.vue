@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'HomePage',
@@ -15,12 +15,12 @@ export default {
   computed: {
     ...mapState({ clientsData: 'data' }),
   },
-  // methods: {
-  //   ...mapActions(['fetch']),
-  // },
+  methods: {
+    ...mapActions({ fetchClients: 'fetch' }),
+  },
   async mounted() {
-    console.log(this.$store);
-    // await this.$store.dispatch('fetch');
+    await this.fetchClients();
+    console.log(this.clientsData);
   },
 };
 </script>

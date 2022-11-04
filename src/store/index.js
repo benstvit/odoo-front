@@ -1,5 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import axios from 'axios';
+
+const axiosConfig = {
+  baseURL: 'http://localhost:3000/api/v1',
+  timeout: 30000,
+};
+
+const $axios = axios.create(axiosConfig);
 
 Vue.use(Vuex);
 
@@ -12,16 +20,17 @@ export default new Vuex.Store({
   },
   actions: {
     async fetch({ commit }) {
-      // await this.$axios.get('/clients').then((response) => console.log(response));
-      const { data } = await this.$axios.get('/clients');
-      // .catch((error) => {
-      //   console.error('There was an error!', error);
-      // });
-      commit('SET_DATA', data);
+      const { data, message, success } = await $axios.get('/clients')
+        .then((response) => response.data)
+        .catch((error) => {
+          console.error('There was an error!', error);
+        });
 
-      // if (success) {
-      //   commit('SET_DATA', data);
-      // }
+      if (success) {
+        commit('SET_DATA', data);
+      }
+
+      return { data, message };
     },
   },
   mutations: {
