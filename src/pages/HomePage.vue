@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-    <h1 class="text-pink-400 font-bold">The app is working</h1>
+    <h1 class="text-green-400 font-bold">The app is working</h1>
   </div>
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex';
+import { mapState } from 'vuex';
 
 export default {
   name: 'HomePage',
@@ -13,14 +13,14 @@ export default {
     return {};
   },
   computed: {
-    ...mapState('clients', { clientsData: 'data' }),
+    ...mapState({ clientsData: 'data' }),
   },
-  methods: {
-    ...mapActions('clients', { fetchClients: 'fetch' }),
-  },
+  // methods: {
+  //   ...mapActions(['fetch']),
+  // },
   async mounted() {
-    await this.fetchClients;
-    console.log(this.clientsData);
+    console.log(this.$store);
+    // await this.$store.dispatch('fetch');
   },
 };
 </script>

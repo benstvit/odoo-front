@@ -15,7 +15,7 @@
     "vue-axios": "^3.5.1",
     "vue-router": "^3.5.1",
     "vuetify": "^2.6.0",
-    "vuex": "^4.0.2"
+    "vuex": "^3.X"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
