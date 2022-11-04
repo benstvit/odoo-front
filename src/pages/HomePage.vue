@@ -5,9 +5,22 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import { mapActions, mapState } from 'vuex';
 
 export default {
   name: 'HomePage',
+  data() {
+    return {};
+  },
+  computed: {
+    ...mapState('clients', { clientsData: 'data' }),
+  },
+  methods: {
+    ...mapActions('clients', { fetchClients: 'fetch' }),
+  },
+  async mounted() {
+    await this.fetchClients;
+    console.log(this.clientsData);
+  },
 };
 </script>
