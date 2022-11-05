@@ -7,7 +7,7 @@
       <div class="hover:bg-gray-200 p-1 cursor-pointer"
       :class="cardViewEnabled && 'text-bold text-black border-b-4 border-black'"
       @click="toggleView">
-      Gallery View
+      <svg :is="TableSvg"></svg> Gallery View
       </div>
       <span
       class="hover:bg-gray-200 p-1 cursor-pointer"
@@ -24,12 +24,14 @@
 import { mapActions, mapState } from 'vuex';
 import CardsContent from '../components/CardsContent.vue';
 import TableContent from '../components/TableContent.vue';
+import TableSvg from '../assets/svg/table.svg';
 
 export default {
   name: 'HomePage',
   components: {
     CardsContent,
     TableContent,
+    TableSvg,
   },
   data() {
     return {
