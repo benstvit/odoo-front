@@ -49,11 +49,11 @@ export default {
 
     toggleView() {
       this.cardViewEnabled = !this.cardViewEnabled;
-      console.log(this.cardViewEnabled);
     },
   },
   async mounted() {
     await this.fetchClients();
+    console.log(this.clientsData);
   },
 };
 </script>

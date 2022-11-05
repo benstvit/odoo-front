@@ -5,7 +5,7 @@
         <tr>
           <th v-for="title in titles"
             :key="title"
-            class="p-4 text-center"
+            class="p-3 text-center"
             :class="title === 'Name' && 'pl-0 text-left'">
             {{ title }}
           </th>
@@ -17,8 +17,8 @@
         <tr>
           <td class="text-left pl-4 font-bold">{{client.attributes.name}}</td>
           <td class="text-center py-2">{{client.attributes.email}}</td>
-          <td class="text-center py-2">{{client.attributes.street}}</td>
-          <td class="text-center py-2">{{client.attributes.zip}}</td>
+          <td class="text-center py-2">{{client.attributes.street || '/'}}</td>
+          <td class="text-center py-2">{{client.attributes.zip || '/'}}</td>
         </tr>
       </tbody>
     </table>
