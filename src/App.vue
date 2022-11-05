@@ -1,7 +1,7 @@
 <template>
-  <div class="container mx-auto my-8">
-    <router-view/>
-  </div>
+    <div class="container mx-auto my-8">
+      <router-view/>
+    </div>
 </template>
 
 <script>
