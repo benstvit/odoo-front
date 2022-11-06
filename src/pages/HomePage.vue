@@ -1,7 +1,7 @@
-<template v-show="clientsData">
+<template>
   <section>
     <div class="p-4 border-b-2">
-      <h1 class="text-gray-800 text-5xl font-bold">📒 Clients</h1>
+      <h1 class="md:text-left text-center text-gray-800 text-5xl font-bold">📒 Clients</h1>
     </div>
     <div class="flex justify-start gap-2 items-center text-sm text-gray-800 mb-2 mt-8 mx-4">
       <div class="hover:bg-gray-200 p-1 cursor-pointer"
@@ -34,10 +34,11 @@ export default {
   data() {
     return {
       cardViewEnabled: true,
+      clientsData: [],
     };
   },
   computed: {
-    ...mapState({ clientsData: 'data' }),
+    ...mapState({ fetchedData: 'data' }),
 
     titles() {
       const array = Object.keys(this.clientsData[0].attributes);
@@ -53,7 +54,7 @@ export default {
   },
   async mounted() {
     await this.fetchClients();
-    console.log(this.clientsData);
+    this.clientsData = this.fetchedData;
   },
 };
 </script>
