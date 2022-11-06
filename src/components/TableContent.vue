@@ -15,10 +15,10 @@
       v-for="client in data"
       :key="client.id">
         <tr>
-          <td class="text-left pl-4 font-bold">{{client.attributes.name}}</td>
-          <td class="text-center py-2">{{client.attributes.email}}</td>
-          <td class="text-center py-2">{{client.attributes.street || '/'}}</td>
-          <td class="text-center py-2">{{client.attributes.zip || '/'}}</td>
+          <td class="text-left pl-4 font-bold border">{{client.attributes.name}}</td>
+          <td class="text-center py-2 border">{{client.attributes.email}}</td>
+          <td class="text-center py-2 border">{{client.attributes.street || '/'}}</td>
+          <td class="text-center py-2 border">{{client.attributes.zip || '/'}}</td>
         </tr>
       </tbody>
     </table>

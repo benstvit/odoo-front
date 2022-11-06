@@ -1,7 +1,8 @@
 <template>
  <section>
     <div class="grid grid-cols-6 gap-2">
-      <div id="card" class="col-span-2 flex flex-col p-4 m-4 shadow-md rounded-md bg-gray-50"
+      <div id="card"
+          class="col-span-6 md:col-span-3 lg:col-span-2 flex flex-col p-4 m-4 shadow-md rounded-md bg-gray-50"
           v-for="client in attributes"
           :key="client.id">
         <h2 class="font-bold my-2 text-emerald-600">{{ client.name }}</h2>
