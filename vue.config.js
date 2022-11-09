@@ -4,4 +4,6 @@ module.exports = defineConfig({
   transpileDependencies: [
     'vuetify',
   ],
+
+  publicPath: '/odoo-front/',
 });
